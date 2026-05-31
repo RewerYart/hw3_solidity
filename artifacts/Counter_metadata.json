@@ -1,0 +1,117 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newValue",
+						"type": "uint256"
+					}
+				],
+				"name": "Decremented",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newValue",
+						"type": "uint256"
+					}
+				],
+				"name": "Incremented",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "decrement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "increment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Контракт-лічильник із функціями збільшення, зменшення та отримання значення",
+			"kind": "dev",
+			"methods": {
+				"getCount()": {
+					"returns": {
+						"_0": "Поточне значення count"
+					}
+				}
+			},
+			"title": "Counter",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"decrement()": {
+					"notice": "Зменшити лічильник на 1 (не може бути від'ємним)"
+				},
+				"getCount()": {
+					"notice": "Отримати поточне значення лічильника"
+				},
+				"increment()": {
+					"notice": "Збільшити лічильник на 1"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/4_Counter.sol": "Counter"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/4_Counter.sol": {
+			"keccak256": "0xfedec04ff91212afdea11dfb1a74f2fca2c3b7a48db93ff97a8c74bfeaeda670",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://0ba8414381d0cb6d9c502afc1b9a19f63adf88571fb12a90ca895ae55acc3f5c",
+				"dweb:/ipfs/QmUJv2YWDeevRDsVyD7SiRpwTwd4KJTUs8PiYRYtgMXBoz"
+			]
+		}
+	},
+	"version": 1
+}

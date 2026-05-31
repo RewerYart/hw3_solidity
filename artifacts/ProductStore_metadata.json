@@ -1,0 +1,181 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "ProductAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "paid",
+						"type": "uint256"
+					}
+				],
+				"name": "ProductPurchased",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "addProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "buyProduct",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getProducts",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ProductStore.Product[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Магазин товарів: додавання, купівля з перевіркою балансу, перегляд",
+			"kind": "dev",
+			"methods": {
+				"addProduct(string,uint256)": {
+					"params": {
+						"name": "Назва товару",
+						"price": "Ціна у wei"
+					}
+				},
+				"buyProduct(uint256)": {
+					"params": {
+						"index": "Індекс товару у масиві"
+					}
+				},
+				"getProducts()": {
+					"returns": {
+						"_0": "Масив структур Product"
+					}
+				}
+			},
+			"title": "ProductStore",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addProduct(string,uint256)": {
+					"notice": "Додати новий товар"
+				},
+				"buyProduct(uint256)": {
+					"notice": "Купити товар, надіславши ETH"
+				},
+				"getProducts()": {
+					"notice": "Отримати список усіх товарів"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/6_ProductStore.sol": "ProductStore"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/6_ProductStore.sol": {
+			"keccak256": "0x6e4b5aa4a65e8c52f638d684c2da3e1ec7878b0671e8cd0322ce6d517a6b9494",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7824d8f30fe4071c53d0b48f07c84db0a9480d1cd83c0ec0098e8000c693de18",
+				"dweb:/ipfs/QmZK8uMPn27a4hyPxXKqTYfXHdTZddQagB6TW69qLMQiCs"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,145 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "task",
+						"type": "string"
+					}
+				],
+				"name": "TaskAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "TaskRemoved",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "task",
+						"type": "string"
+					}
+				],
+				"name": "addTask",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTasks",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "removeTask",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Управління списком задач: додавання, видалення, перегляд",
+			"kind": "dev",
+			"methods": {
+				"addTask(string)": {
+					"params": {
+						"task": "Текст задачі"
+					}
+				},
+				"getTasks()": {
+					"returns": {
+						"_0": "Масив рядків із задачами"
+					}
+				},
+				"removeTask(uint256)": {
+					"params": {
+						"index": "Індекс задачі у масиві"
+					}
+				}
+			},
+			"title": "TaskList",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addTask(string)": {
+					"notice": "Додати нову задачу"
+				},
+				"getTasks()": {
+					"notice": "Отримати всі задачі"
+				},
+				"removeTask(uint256)": {
+					"notice": "Видалити задачу за індексом (swap-and-pop, порядок не зберігається)"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/5_TaskList.sol": "TaskList"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/5_TaskList.sol": {
+			"keccak256": "0x6a541f7824ce1e289629486c81e7db1851fcb9981da4a442ab46c3e97cb241ff",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://3e53c13c09e05ff5007cbb5eb2ec7c9463cbccd957a8dd21ec5df6742df6ead5",
+				"dweb:/ipfs/QmTPQx72UWumNk2vT1EsvVHWcKd6guddMnQHzXVUgF7BjF"
+			]
+		}
+	},
+	"version": 1
+}
