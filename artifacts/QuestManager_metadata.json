@@ -1,0 +1,547 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newLevel",
+						"type": "uint256"
+					}
+				],
+				"name": "LeveledUp",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "questId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "xpEarned",
+						"type": "uint256"
+					}
+				],
+				"name": "QuestCompleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "questId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "rewardAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "xpReward",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "minLevel",
+						"type": "uint256"
+					}
+				],
+				"name": "QuestCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "questId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					}
+				],
+				"name": "QuestStarted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "questId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "RewardClaimed",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "questId",
+						"type": "uint256"
+					}
+				],
+				"name": "completeQuest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rewardAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "xpReward",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minLevel",
+						"type": "uint256"
+					}
+				],
+				"name": "createQuest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "questId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "getPlayer",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "isRegistered",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "level",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalXP",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct QuestManager.Player",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "questId",
+						"type": "uint256"
+					}
+				],
+				"name": "getQuest",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rewardAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "xpReward",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "minLevel",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "exists",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct QuestManager.Quest",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "questId",
+						"type": "uint256"
+					}
+				],
+				"name": "getReward",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "hasCompleted",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "hasStarted",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "players",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "isRegistered",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "level",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalXP",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "questCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "quests",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rewardAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "xpReward",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minLevel",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "exists",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "registerPlayer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "questId",
+						"type": "uint256"
+					}
+				],
+				"name": "startQuest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"details": "Управляє квестами для гравців: реєстрація, проходження, нагороди та рівні",
+			"kind": "dev",
+			"methods": {
+				"createQuest(string,uint256,uint256,uint256)": {
+					"params": {
+						"minLevel": "Мінімальний рівень гравця для початку",
+						"name": "Назва квесту",
+						"rewardAmount": "Нагорода у wei",
+						"xpReward": "Кількість досвіду за виконання"
+					},
+					"returns": {
+						"questId": "Ідентифікатор створеного квесту"
+					}
+				},
+				"getReward(uint256)": {
+					"returns": {
+						"amount": "Сума нагороди у wei"
+					}
+				}
+			},
+			"title": "QuestManager",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"completeQuest(uint256)": {
+					"notice": "Завершити квест та отримати досвід"
+				},
+				"createQuest(string,uint256,uint256,uint256)": {
+					"notice": "Створити новий квест (тільки власник)"
+				},
+				"getBalance()": {
+					"notice": "Баланс ETH-пулу нагород"
+				},
+				"getPlayer(address)": {
+					"notice": "Отримати інформацію про гравця"
+				},
+				"getQuest(uint256)": {
+					"notice": "Отримати інформацію про квест"
+				},
+				"getReward(uint256)": {
+					"notice": "Отримати ETH-нагороду за виконаний квест"
+				},
+				"registerPlayer()": {
+					"notice": "Зареєструвати себе як гравця"
+				},
+				"startQuest(uint256)": {
+					"notice": "Почати квест"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/HW5/14_QuestManager.sol": "QuestManager"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/HW5/14_QuestManager.sol": {
+			"keccak256": "0x23419206837ebdc13fd9be0a2cd92110f723323d02e90929eb299092be56ae96",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://e8e2065aafdee21f115ccb839a8ba227230a9ca0b7294eba4a7bc8bdd59cdf96",
+				"dweb:/ipfs/QmZDGdCpsby87JwhgpnwikodarcPXf2no7Q5FnimEk7LCa"
+			]
+		}
+	},
+	"version": 1
+}
