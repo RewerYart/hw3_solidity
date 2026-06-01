@@ -1,0 +1,47 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Бібліотека корисних функцій для масивів uint256",
+			"kind": "dev",
+			"methods": {},
+			"title": "ArrayLibrary",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/HW4/10_ArrayLibrary.sol": "ArrayLibrary"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/HW4/10_ArrayLibrary.sol": {
+			"keccak256": "0xf2e8e1b02ce98581187582154e217c4a27a88703e7db826d7263714923a9eb00",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://1d38f4e6d8969560e59bf59d62702bcb8b8484ca0f9decbaaae5c9c20272007c",
+				"dweb:/ipfs/QmdyKdW4Z8uvhNvB6YQXjvtwHgqssgNsf2YFXBgqgfGQ9V"
+			]
+		}
+	},
+	"version": 1
+}

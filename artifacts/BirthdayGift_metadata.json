@@ -1,0 +1,399 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "sharePerGrandchild",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposited",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "grandchild",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint16",
+						"name": "year",
+						"type": "uint16"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "month",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "day",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "birthdayTimestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "GrandchildAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "grandchild",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdrawn",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "grandchild",
+						"type": "address"
+					},
+					{
+						"internalType": "uint16",
+						"name": "year",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint8",
+						"name": "month",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "day",
+						"type": "uint8"
+					}
+				],
+				"name": "addGrandchild",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "grandchild",
+						"type": "address"
+					}
+				],
+				"name": "canWithdraw",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "year",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint8",
+						"name": "month",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "day",
+						"type": "uint8"
+					}
+				],
+				"name": "dateToTimestamp",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "grandchild",
+						"type": "address"
+					}
+				],
+				"name": "daysUntilBirthday",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deposited",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getGrandchildren",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "addr",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "birthdayTimestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "withdrawn",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct BirthdayGift.Grandchild[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getShare",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "grandchildren",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "birthdayTimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "withdrawn",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalDeposited",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Бабуся вносить ETH, який ділиться порівну між онуками.      Онуки додаються по одному через addGrandchild() з людиночитаємою датою.      Кожен онук може зняти свою частку у день народження або після нього.",
+			"kind": "dev",
+			"methods": {
+				"addGrandchild(address,uint16,uint8,uint8)": {
+					"params": {
+						"day": "День 1–31",
+						"grandchild": "Адреса онука",
+						"month": "Місяць 1–12",
+						"year": "Рік дня народження (наприклад 2025)"
+					}
+				},
+				"dateToTimestamp(uint16,uint8,uint8)": {
+					"details": "Алгоритм BokkyPooBah — перевірений стандарт для Solidity",
+					"params": {
+						"day": "День 1–31",
+						"month": "Місяць 1–12",
+						"year": "Рік (наприклад 2025)"
+					},
+					"returns": {
+						"_0": "Unix-timestamp о опівночі UTC для вказаної дати"
+					}
+				}
+			},
+			"title": "BirthdayGift",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addGrandchild(address,uint16,uint8,uint8)": {
+					"notice": "Додати онука з датою дня народження (тільки власник, до депозиту)"
+				},
+				"canWithdraw(address)": {
+					"notice": "Перевірити чи може онук зняти подарунок прямо зараз"
+				},
+				"dateToTimestamp(uint16,uint8,uint8)": {
+					"notice": "Конвертує людиночитаєму дату у Unix-timestamp"
+				},
+				"daysUntilBirthday(address)": {
+					"notice": "Скільки днів залишилось до дня народження (0 якщо вже настав)"
+				},
+				"deposit()": {
+					"notice": "Бабуся вносить ETH (лише один раз, після додавання всіх онуків)"
+				},
+				"getGrandchildren()": {
+					"notice": "Список усіх онуків"
+				},
+				"getShare()": {
+					"notice": "Розмір частки для кожного онука у wei"
+				},
+				"withdraw()": {
+					"notice": "Онук знімає свою частку (доступно з дня народження)"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/HW4/11_BirthdayGift.sol": "BirthdayGift"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/HW4/11_BirthdayGift.sol": {
+			"keccak256": "0x0374bf476cb65e377f3440fff83b3397b8f1239f4d91dacf636d2d70ad6987d7",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://2c1146c6266bacc9a25124812e70038a2071ac7149ad9aaf8e3425b5a960efc0",
+				"dweb:/ipfs/QmUty4tMzVry76JGhk1mtnUjJrUe5PsLe17Qaj2xoHFJPf"
+			]
+		}
+	},
+	"version": 1
+}

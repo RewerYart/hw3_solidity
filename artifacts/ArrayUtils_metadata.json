@@ -1,0 +1,129 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "add",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "find",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAll",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "remove",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "sort",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Контракт для роботи з масивом через бібліотеку ArrayLibrary",
+			"kind": "dev",
+			"methods": {},
+			"title": "ArrayUtils",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"add(uint256)": {
+					"notice": "Додати елемент до масиву"
+				},
+				"find(uint256)": {
+					"notice": "Знайти індекс значення (-1 якщо не знайдено)"
+				},
+				"getAll()": {
+					"notice": "Отримати весь масив"
+				},
+				"remove(uint256)": {
+					"notice": "Видалити перше входження значення з масиву"
+				},
+				"sort()": {
+					"notice": "Відсортувати масив за зростанням"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/HW4/10_ArrayLibrary.sol": "ArrayUtils"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/HW4/10_ArrayLibrary.sol": {
+			"keccak256": "0xf2e8e1b02ce98581187582154e217c4a27a88703e7db826d7263714923a9eb00",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://1d38f4e6d8969560e59bf59d62702bcb8b8484ca0f9decbaaae5c9c20272007c",
+				"dweb:/ipfs/QmdyKdW4Z8uvhNvB6YQXjvtwHgqssgNsf2YFXBgqgfGQ9V"
+			]
+		}
+	},
+	"version": 1
+}
